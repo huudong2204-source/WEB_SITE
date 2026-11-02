@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Đổi tên trang hiển thị trên tab trình duyệt tại đây. -->
+  <title>Triển Lãm Tri Thức & Luận Văn Sau Đại Học - VLU</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+  <!-- HEADER: logo, tên website và điều hướng chính. -->
+  <header class="vlu-header" id="siteTop">
+    <div class="header-main">
+      <div class="header-container">
+        <!-- [CHỖ THAY ĐỔI LOGO TRƯỜNG]: Thay file ảnh images/logo.png -->
+        <a class="logo-area" href="#siteTop" aria-label="VLU Research Hub - Trang chủ">
+          <img src="images/logo.png" alt="Van Lang University Logo" class="vlu-logo-img">
+        </a>
+        <nav class="header-nav" id="primaryNavigation" aria-label="Điều hướng chính">
+          <a href="#siteTop">Trang chủ</a>
+          <a href="#heroSlider">Đề tài nổi bật</a>
+          <a href="#researchSection">Đề tài nghiên cứu</a>
+        </nav>
+        <button class="mobile-nav-toggle" id="mobileNavToggle" type="button" aria-label="Mở menu điều hướng" aria-expanded="false" aria-controls="primaryNavigation">
+          <i class="fa-solid fa-bars" aria-hidden="true"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ==========================================================================
+       BANNER SLIDER: 4 SLIDE ĐỀ TÀI NỔI BẬT
+       - Cả 4 banner dùng chung ảnh nền background.jpeg (sửa màu/nền tại style.css).
+       - Bấm banner mở trang chi tiết (cấu hình tại thesis-data.js mảng featured).
+       ========================================================================== -->
+  <section class="hero-slider" id="heroSlider">
+    <div class="slider-track" id="sliderTrack">
+      
+      <!-- ======================================================================
+           [CHỖ THAY ĐỔI BANNER 1]
+           - Đổi ảnh tác giả: thay src="images/pages/discover/leadership/..."
+           - Đổi tên đề tài: sửa chữ trong thẻ <h2 class="title-3d">
+           - Đổi tên tác giả: sửa chữ trong thẻ <p class="author">
+           - Đổi ảnh nền phía sau: sửa .slide-topic-supply-chain trong style.css
+           ====================================================================== -->
+      <div class="slide slide-topic-supply-chain" onclick="openThesisDetail('featured-supply-chain', 'featured')">
+        <div class="author-wrapper">
+          <!-- ẢNH TÁC GIẢ 1 (Huỳnh Tấn Lợi): căn chỉnh vị trí ở .author-img-1 trong style.css -->
+          <img src="images/pages/discover/leadership/huynh-tan-loi-portrait-removebg-preview.png" alt="Huỳnh Tấn Lợi" class="author-main-img author-img-1">
+        </div>
+
+        <div class="slide-content-above">
+          <h2 class="title-3d">Ứng Dụng Trí Tuệ Nhân Tạo Trong Tối Ưu Hóa Chuỗi Cung Ứng Xanh</h2>
+          <p class="author"><i class="fa-solid fa-user-graduate"></i> Tác giả: Huỳnh Tấn Lợi</p>
+        </div>
+      </div>
+
+      <!-- ======================================================================
+           [CHỖ THAY ĐỔI BANNER 2]
+           - Đổi ảnh tác giả: thay src="images/pages/discover/leadership/..."
+           - Đổi tên đề tài: sửa chữ trong thẻ <h2 class="title-3d">
+           - Đổi tên tác giả: sửa chữ trong thẻ <p class="author">
+           - Đổi ảnh nền phía sau: sửa .slide-topic-coastal-architecture trong style.css
+           ====================================================================== -->
+      <div class="slide slide-topic-coastal-architecture" onclick="openThesisDetail('featured-coastal-architecture', 'featured')">
+        <div class="author-wrapper">
+          <!-- ẢNH TÁC GIẢ 2 (Nguyễn Thu Hiền): căn chỉnh vị trí ở .author-img-2 trong style.css -->
+          <img src="images/pages/discover/leadership/nguyen-thu-hien-portrait.png" alt="Nguyễn Thu Hiền" class="author-main-img author-img-2">
+        </div>
+
+        <div class="slide-content-above">
+          <h2 class="title-3d">Giải Pháp Thiết Kế Kiến Trúc Bền Vững Cho Đô Thị Biển Miền Trung</h2>
+          <p class="author"><i class="fa-solid fa-chalkboard-user"></i> Tác giả: Nguyễn Thu Hiền</p>
+        </div>
+      </div>
+
+      <!-- ======================================================================
+           [CHỖ THAY ĐỔI BANNER 3]
+           - Đổi ảnh tác giả: thay src="images/pages/discover/leadership/..."
+           - Đổi tên đề tài: sửa chữ trong thẻ <h2 class="title-3d">
+           - Đổi tên tác giả: sửa chữ trong thẻ <p class="author">
+           - Đổi ảnh nền phía sau: sửa .slide-topic-health-ai trong style.css
+           ====================================================================== -->
+      <div class="slide slide-topic-health-ai" onclick="openThesisDetail('featured-health-ai', 'featured')">
+        <div class="author-wrapper">
+          <!-- ẢNH TÁC GIẢ 3 (Nguyễn Việt Tính): căn chỉnh vị trí ở .author-img-3 trong style.css -->
+          <img src="images/pages/discover/leadership/nguyen-viet-tinh-portrait.png" alt="Nguyễn Việt Tính" class="author-main-img author-img-3">
+        </div>
+
+        <div class="slide-content-above">
+          <h2 class="title-3d">Xây Dựng Mô Hình Bào Chế Thuốc Tự Động Bằng Máy Học Vision AI</h2>
+          <p class="author"><i class="fa-solid fa-flask"></i> Tác giả: Nguyễn Việt Tính</p>
+        </div>
+      </div>
+
+      <!-- ======================================================================
+           [CHỖ THAY ĐỔI BANNER 4]
+           - Đổi ảnh tác giả: thay src="images/pages/discover/leadership/..."
+           - Đổi tên đề tài: sửa chữ trong thẻ <h2 class="title-3d">
+           - Đổi tên tác giả: sửa chữ trong thẻ <p class="author">
+           - Đổi ảnh nền phía sau: sửa .slide-topic-finance trong style.css
+           ====================================================================== -->
+      <div class="slide slide-topic-finance" onclick="openThesisDetail('featured-finance', 'featured')">
+        <div class="author-wrapper">
+          <!-- ẢNH TÁC GIẢ 4 (Tống Chí Thông): căn chỉnh vị trí ở .author-img-4 trong style.css -->
+          <img src="images/pages/discover/leadership/tong-chi-thong-portrait.png" alt="Tống Chí Thông" class="author-main-img author-img-4">
+        </div>
+
+        <div class="slide-content-above">
+          <h2 class="title-3d">Chuyển Đổi Số Trong Quản Trị Rủi Ro Ngân Hàng Thương Mại</h2>
+          <p class="author"><i class="fa-solid fa-chart-line"></i> Tác giả: Tống Chí Thông</p>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Mỗi chấm gọi setSlide(index); thứ tự index phải khớp thứ tự các slide phía trên. -->
+    <div class="slider-dots">
+      <span class="dot active" onclick="event.stopPropagation(); setSlide(0)"></span>
+      <span class="dot" onclick="event.stopPropagation(); setSlide(1)"></span>
+      <span class="dot" onclick="event.stopPropagation(); setSlide(2)"></span>
+      <span class="dot" onclick="event.stopPropagation(); setSlide(3)"></span>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       [CHỖ THAY ĐỔI DẢI THÔNG ĐIỆP CHẠY (MARQUEE)]:
+       Sửa chữ trong cả 2 khối .marquee-group cùng thứ tự để dải chạy không bị ngắt.
+       ========================================================================== -->
+  <section class="vlu-marquee" aria-label="Thông điệp Viện Sau Đại học">
+    <div class="marquee-track">
+      <div class="marquee-group">
+        <span class="marquee-item">Viện Sau Đại học có mạng lưới kết nối rộng mở nhất Việt Nam và vươn ra thế giới</span>
+        <span class="marquee-separator" aria-hidden="true">•</span>
+        <span class="marquee-item">Kiến tạo tương lai toàn cầu</span>
+        <span class="marquee-separator" aria-hidden="true">•</span>
+        <span class="marquee-item">Dẫn dắt đổi mới sáng tạo</span>
+        <span class="marquee-separator" aria-hidden="true">•</span>
+        <span class="marquee-item">Tinh thần khởi nghiệp</span>
+        <span class="marquee-separator" aria-hidden="true">•</span>
+        <span class="marquee-item">Gắn kết thực tiễn doanh nghiệp</span>
+        <span class="marquee-separator" aria-hidden="true">•</span>
+      </div>
+      <div class="marquee-group" aria-hidden="true">
+        <span class="marquee-item">Viện Sau Đại học có mạng lưới kết nối rộng mở nhất Việt Nam và vươn ra thế giới</span>
+        <span class="marquee-separator">•</span>
+        <span class="marquee-item">Kiến tạo tương lai toàn cầu</span>
+        <span class="marquee-separator">•</span>
+        <span class="marquee-item">Dẫn dắt đổi mới sáng tạo</span>
+        <span class="marquee-separator">•</span>
+        <span class="marquee-item">Tinh thần khởi nghiệp</span>
+        <span class="marquee-separator">•</span>
+        <span class="marquee-item">Gắn kết thực tiễn doanh nghiệp</span>
+        <span class="marquee-separator">•</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       KHU VỰC ĐỀ TÀI NGHIÊN CỨU:
+       (Đã bỏ tính năng bắt bấm chọn Thạc sĩ/Tiến sĩ; người dùng cuộn xuống là thấy
+       ngay bộ lọc khối ngành, thanh tìm kiếm và danh sách các thẻ đề tài).
+       ========================================================================== -->
+  <div class="program-level-panel" id="mastersPanel">
+    <div id="researchSection"></div>
+
+    <!-- BỘ LỌC KHỐI NGÀNH: mỗi nút truyền mã ngành tương ứng cho filterSector(). -->
+    <section class="sector-section">
+      <div class="container">
+        <h3 class="section-title"><i class="fa-solid fa-shapes"></i> Chọn Khối Ngành</h3>
+        <div class="sector-tabs">
+          <button class="tab-btn active" onclick="filterSector('all', this)">Tất Cả Khối Ngành</button>
+          <button class="tab-btn" onclick="filterSector('design', this)">Khối ngành Thiết kế</button>
+          <button class="tab-btn" onclick="filterSector('social', this)">Khối ngành Xã hội Nhân văn - Ngôn ngữ</button>
+          <button class="tab-btn" onclick="filterSector('communication', this)">Khối ngành Truyền thông</button>
+          <button class="tab-btn" onclick="filterSector('business', this)">Khối ngành Kinh doanh - Quản lý</button>
+          <button class="tab-btn" onclick="filterSector('technology', this)">Khối ngành Công nghệ - Kỹ thuật</button>
+          <button class="tab-btn" onclick="filterSector('architecture', this)">Khối ngành Kiến trúc</button>
+          <button class="tab-btn" onclick="filterSector('tourism', this)">Khối ngành Du lịch</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- THANH TÌM KIẾM VÀ LƯỚI THẺ ĐỀ TÀI:
+         - Danh sách đề tài được dựng tự động từ mảng theses trong thesis-data.js.
+         - File PDF thật được đặt trong thư mục "TỔNG HỢP LUẬN VĂN" cạnh index.html.
+         - Thêm / sửa đề tài: mở file thesis-data.js chỉnh sửa trực tiếp. -->
+    <main class="exhibition-container">
+      <div class="research-search-toolbar" data-search-toolbar>
+        <label class="research-search-control research-search-keyword-control">
+          <span>Tìm kiếm</span>
+          <span class="research-search-input-wrap">
+            <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
+            <input class="research-search-input" type="search" placeholder="Nhập từ khóa, có dấu hoặc không dấu" autocomplete="off">
+          </span>
+        </label>
+        <label class="research-search-control">
+          <span>Tìm trong</span>
+          <select class="research-search-field">
+            <option value="all">Tất cả thông tin</option>
+            <option value="title">Tên đề tài</option>
+            <option value="studentName">Tên học viên</option>
+            <option value="supervisorName">Tên giảng viên hướng dẫn</option>
+            <option value="acceptedDate">Ngày được chấp nhận</option>
+          </select>
+        </label>
+        <label class="research-search-control">
+          <span>Lọc ngày chấp nhận</span>
+          <input class="research-search-date" type="date">
+        </label>
+        <button class="research-search-clear" type="button">
+          <i class="fa-solid fa-rotate-left" aria-hidden="true"></i>
+          Xóa lọc
+        </button>
+        <p class="research-search-count" aria-live="polite"></p>
+      </div>
+
+      <!-- LƯỚI THẺ ĐỀ TÀI: tất cả các thẻ tự động mang màu nền đỏ burgundy sang trọng -->
+      <div class="grid-cards" id="researchGrid"></div>
+      <p class="empty-sector-message" id="emptySectorMessage" hidden>Chưa có đề tài thuộc khối ngành này.</p>
+    </main>
+  </div>
+
+  <footer class="site-footer">
+    <div class="site-footer-inner">
+      <div class="site-footer-main">
+        <div class="site-footer-brand">
+          <a class="site-footer-logo" href="#siteTop" aria-label="Viện Sau Đại học - Văn Lang">
+            <img src="images/logo.png" alt="Institute of Postgraduate Education - Van Lang University">
+          </a>
+          <p>Viện Sau Đại học định hướng đổi mới sáng tạo và khởi nghiệp — trực thuộc Trường Đại học Văn Lang, TP. Hồ Chí Minh. Ghi danh trong QS World University Rankings 2026 và xếp hạng 251 châu Á.</p>
+          <p lang="en">An innovation-led, entrepreneurial institute of Postgraduate Education — a division of Van Lang University, Ho Chi Minh City. Ranked in QS World University Rankings 2026 and 251 in Asia.</p>
+        </div>
+
+        <div class="site-footer-connect">
+          <h2>Kết nối với chúng tôi</h2>
+          <a class="site-footer-contact-link" href="https://saudaihoc.vlu.edu.vn/#cluster-I" target="_blank" rel="noopener noreferrer">
+            Liên hệ với chúng tôi tại đây
+            <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i>
+          </a>
+        </div>
+      </div>
+
+      <div class="site-footer-bottom">
+        <span>© 2026 Van Lang University · Ho Chi Minh City</span>
+        <a href="tel:+842871016869">(028) 7101 68 69</a>
+        <a href="tel:+84988486869">0988 48 68 69</a>
+        <a href="mailto:v.sdh@vlu.edu.vn">v.sdh@vlu.edu.vn</a>
+        <a href="https://www.facebook.com/saudaihoc.vlu" target="_blank" rel="noopener noreferrer">Fanpage: Viện Sau Đại học - Trường Đại học Văn Lang</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="thesis-data.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
